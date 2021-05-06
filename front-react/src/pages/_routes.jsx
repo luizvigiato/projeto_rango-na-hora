@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Menu from "./menu";
+import Menu from "./cardapio";
 
 const Routes = () => {
   return (
