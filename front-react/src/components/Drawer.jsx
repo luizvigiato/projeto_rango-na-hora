@@ -15,10 +15,20 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+
 import MailIcon from "@material-ui/icons/Mail";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import Cardapio from '@material-ui/icons/ImportContacts';
+import Carrinho from '@material-ui/icons/ShoppingCart';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
@@ -162,7 +172,7 @@ export function PersistentDrawerLeft() {
                 open={openP}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Perfil</MenuItem>
+                <MenuItem href="/menu">Perfil</MenuItem>
                 <MenuItem onClick={handleClose}>Sair</MenuItem>
               </Menu>
             </div>
@@ -189,10 +199,10 @@ export function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
+          {["Cardapio", "Pedidos"].map((text, index) => (
+            <ListItem button key={text} hre>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <Cardapio /> : <Carrinho />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -200,12 +210,13 @@ export function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {["Pedidos antigos"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <FastfoodIcon /> : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+                <ListItemText primary={text} />
+              
             </ListItem>
           ))}
         </List>

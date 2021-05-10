@@ -7,12 +7,15 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Box from '@material-ui/core/Box';
+import { spacing } from '@material-ui/system';
 
 import bacon from "../public/xbacon.jpg";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345
+    maxWidth: 460,
+       
   },
   action: {
     backgroung: "#F000FF",
@@ -29,6 +32,7 @@ const ItensCardapio = () => {
     const classes = useStyles();
 
     return (
+      <Box mb={2}>
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -58,6 +62,7 @@ const ItensCardapio = () => {
           </Button>
         </CardActions>
       </Card>
+      </Box>
     );
   };
   
