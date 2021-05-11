@@ -9,7 +9,6 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Box from '@material-ui/core/Box';
 
-import bacon from "../public/xbacon.jpg";
 import { withStyles } from "@material-ui/styles";
 
 const styles = theme =>({
@@ -42,10 +41,10 @@ class ItensCardapio extends Component {
           <CardActionArea>
             <CardMedia
               component="img"
-              alt="X-bacon"
+              alt="imagem"
               height="180"
               image={this.props.imagem}
-              title="X-bacon"
+              title="Item Cardapio"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">

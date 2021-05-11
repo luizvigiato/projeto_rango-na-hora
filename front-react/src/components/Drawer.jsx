@@ -20,7 +20,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import { Link } from "react-router-dom";
-import { Link as MaterialLink } from "@material-ui/core";
 import ListaMenu from './menu';
 
 
@@ -196,9 +195,9 @@ export function PersistentDrawerLeft() {
         {/* <Divider /> */}
         <List>
           {ListaMenu.map((item, index) => (
-            <ListItem component={item.external ? MaterialLink : Link} button component={Link} to={item.external ? null : {pathname: item.pathname}}>
+            <ListItem  button component={Link} to={item.external ? null : {pathname: item.pathname}}>
               <ListItemIcon>
-                {/* Import e feito no arquivo com as labels */}
+                {/* Import e feito no arquivo com as labels components/menu */}
                 {item.icons}
               </ListItemIcon>
               <ListItemText primary={item.label} />

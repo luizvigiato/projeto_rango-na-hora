@@ -18,7 +18,7 @@ import Menu from "./cardapio";
 
 // export default Routes;
 
-export default props => (
+const Routes = () => (
   <BrowserRouter>
     <ScrollToTop>
       <Switch>
@@ -27,3 +27,5 @@ export default props => (
     </ScrollToTop>
   </BrowserRouter>
 )
+
+export default Routes;

@@ -27,6 +27,12 @@ const Itens = [
         descricao: "Para aliviar seu estresse do dia, temos esta estupenda cerveja pra lá de gelada.",
         valor: "10,00",
         imagem: heineken
+    },
+    {
+        label: "Heineken LongNeck",
+        descricao: "Para aliviar seu estresse do dia, temos esta estupenda cerveja pra lá de gelada.",
+        valor: "7,00",
+        imagem: heineken
     }
 ];
 

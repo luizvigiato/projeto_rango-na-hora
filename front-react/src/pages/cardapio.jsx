@@ -13,8 +13,7 @@ const HomePage = () => {
       <CssBaseline />
         <Container maxWidth="sm">
           <PersistentDrawerLeft />
-          {/* aqui teria como fazer o envio de informacos usando o .map pro ItensCardapio?
-          como por exemplo o nome do produto, descricao, foto, e valor */}
+          {/* Transformacao de um array recebido para o elemento ItensCardapio */}
           {ListaItens.map((item,index) =>(
             <ItensCardapio imagem={item.imagem} descricao={item.descricao} valor={item.valor} label={item.label} />
           ))}
