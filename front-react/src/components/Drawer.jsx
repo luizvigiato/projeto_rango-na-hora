@@ -201,7 +201,8 @@ export function PersistentDrawerLeft() {
           {ListaMenu.map((item, index) => (
             <ListItem component={item.external ? MaterialLink : Link} button component={Link} to={item.external ? null : {pathname: item.pathname}}>
               <ListItemIcon>
-                {/* Nao estou conseguindo por um icone aqui atravez do arquivo ../components/menu.jsx */}
+                {/* Import e feito no arquivo com as labels */}
+                {item.icons}
               </ListItemIcon>
               <ListItemText primary={item.label} />
             </ListItem>
