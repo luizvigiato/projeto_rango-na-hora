@@ -1,5 +1,5 @@
 import React from "react";
-import {  BrowserRouter, HashRouter, Switch, Route } from "react-router-dom";
+import {  BrowserRouter, Switch, Route } from "react-router-dom";
 import ScrollToTop from './ScrollTop'
 
 import Menu from "./cardapio";
