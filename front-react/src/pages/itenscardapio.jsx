@@ -43,23 +43,22 @@ class ItensCardapio extends Component {
             <CardMedia
               component="img"
               alt="X-bacon"
-              height="140"
-              image={bacon}
+              height="180"
+              image={this.props.imagem}
               title="X-bacon"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                X-Burger Bacon Plus
+                {this.props.label}
             </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                120 Gramas de costela defiada, 20g de bacon, Pão de hamburger,
-                alface, tomate, ovo, queijo cheddar, cebola caramelizada.
+                {this.props.descricao}
             </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions className={classes.action}>
             <Typography>
-              <b>Valor R$ 25,00</b>
+              <b>Valor R$ {this.props.valor}</b>
             </Typography>
 
             <Button className={classes.bottonLeft} size="small" color="primary">

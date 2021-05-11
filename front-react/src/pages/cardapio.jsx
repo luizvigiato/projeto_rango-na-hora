@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 
 import { PersistentDrawerLeft } from "../components/Drawer";
 import ItensCardapio from "./itenscardapio";
+import ListaItens from "../text_teste/itensMenu";
 
 const HomePage = () => {
   return (
@@ -14,11 +15,9 @@ const HomePage = () => {
           <PersistentDrawerLeft />
           {/* aqui teria como fazer o envio de informacos usando o .map pro ItensCardapio?
           como por exemplo o nome do produto, descricao, foto, e valor */}
-          <ItensCardapio />
-
-          <ItensCardapio />
-          <ItensCardapio />
-          <ItensCardapio />
+          {ListaItens.map((item,index) =>(
+            <ItensCardapio imagem={item.imagem} descricao={item.descricao} valor={item.valor} label={item.label} />
+          ))}
         </Container>
     </>
   );
