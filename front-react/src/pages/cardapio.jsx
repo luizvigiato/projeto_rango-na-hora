@@ -12,6 +12,8 @@ const HomePage = () => {
       <CssBaseline />
         <Container maxWidth="sm">
           <PersistentDrawerLeft />
+          {/* aqui teria como fazer o envio de informacos usando o .map pro ItensCardapio?
+          como por exemplo o nome do produto, descricao, foto, e valor */}
           <ItensCardapio />
 
           <ItensCardapio />
