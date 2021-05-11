@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
+import Icon from '@material-ui/core/Icon';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -15,20 +16,16 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-
 import MailIcon from "@material-ui/icons/Mail";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import Cardapio from '@material-ui/icons/ImportContacts';
 import Carrinho from '@material-ui/icons/ShoppingCart';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { Link as MaterialLink } from "@material-ui/core";
+import ListaMenu from './menu';
+
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
@@ -99,7 +96,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 export function PersistentDrawerLeft() {
+
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -197,14 +196,13 @@ export function PersistentDrawerLeft() {
             )}
           </IconButton>
         </div>
-        <Divider />
+        {/* <Divider /> */}
         <List>
-          {["Cardapio", "Pedidos"].map((text, index) => (
-            <ListItem button key={text} hre>
+          {ListaMenu.map((item, index) => (
+            <ListItem component={item.external ? MaterialLink : Link} button component={Link} to={item.external ? null : {pathname: item.pathname}}>
               <ListItemIcon>
-                {index % 2 === 0 ? <Cardapio /> : <Carrinho />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={item.label} />
             </ListItem>
           ))}
         </List>
@@ -215,8 +213,8 @@ export function PersistentDrawerLeft() {
               <ListItemIcon>
                 {index % 2 === 0 ? <FastfoodIcon /> : <MailIcon />}
               </ListItemIcon>
-                <ListItemText primary={text} />
-              
+              <ListItemText primary={text} />
+
             </ListItem>
           ))}
         </List>

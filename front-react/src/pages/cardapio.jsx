@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container';
 
 import { PersistentDrawerLeft } from "../components/Drawer";
 import ItensCardapio from "./itenscardapio";
-// import {DashboardLayout} from '../components/Layout';
 
 const HomePage = () => {
   return (
