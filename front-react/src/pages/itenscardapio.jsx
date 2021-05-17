@@ -30,6 +30,11 @@ const styles = theme =>({
 
 class ItensCardapio extends Component {
 
+
+  activateLasers(label,valor){
+    console.log(label,valor);
+  }
+
   render() {
 
     const { classes } = this.props;
@@ -60,7 +65,11 @@ class ItensCardapio extends Component {
               <b>Valor R$ {this.props.valor}</b>
             </Typography>
 
-            <Button className={classes.bottonLeft} size="small" color="primary">
+            <Button size="small" onClick={() => {
+              this.activateLasers({
+                label: this.props.label,
+                valor: this.props.valor,
+                })}} color="primary">
               Learn More
           </Button>
           </CardActions>
