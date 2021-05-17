@@ -99,9 +99,11 @@ export function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const auth = React.useState(true);
+  const auth = localStorage.getItem('token') == 'true' ? true : false;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openP = Boolean(anchorEl);
+
+  console.info(localStorage.getItem('token'));
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -168,7 +170,7 @@ export function PersistentDrawerLeft() {
                 onClose={handleClose}
               >
                 <MenuItem href="/menu">Perfil</MenuItem>
-                <MenuItem onClick={handleClose}>Sair</MenuItem>
+                <MenuItem button component={Link} to="/logout" >Sair</MenuItem>
               </Menu>
             </div>
           )}

@@ -81,6 +81,9 @@ export default function CadastroCliente() {
         });
     };
 
+
+    console.info(localStorage.getItem('token'));
+
     return (
         <>
             <CssBaseline />
