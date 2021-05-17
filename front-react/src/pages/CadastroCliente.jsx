@@ -6,6 +6,7 @@ import { PersistentDrawerLeft } from "../components/Drawer";
 import { makeStyles } from '@material-ui/core/styles';
 import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -16,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiTextField-root': {
             margin: theme.spacing(2),
         },
+        '& .MuiButton-root': {
+            margin: theme.spacing(2),
+        }
     },
     textField: {
         marginLeft: theme.spacing(1),
@@ -82,7 +86,7 @@ export default function CadastroCliente() {
             <CssBaseline />
             <Container maxWidth="sm">
                 <PersistentDrawerLeft />
-                <form className={classes.root} noValidate autoComplete="off">
+                <form className={classes.root} autoComplete="off">
                     <TextField fullWidth required id="nome" label="Nome Completo" variant="outlined" size="medium" />
                     <TextField fullWidth required id="email" label="Email" variant="outlined" size="medium" type='email' />
                     {/* Chamada de funcao mask para inclusao exclusiva  */}
@@ -106,6 +110,12 @@ export default function CadastroCliente() {
                             inputComponent: CpfMaskCustom,
                         }} />
                     <TextField fullWidth id="senha" label="Senha" variant="outlined" size="medium" type='password' />
+                    <Button variant="contained" color="primary" type="submit">
+                        Cadastrar
+                    </Button>
+                    <Button variant="contained" color="secondary" onClick={ event => window.location.href='/'}>
+                        Cancelar
+                    </Button>
                 </form>
             </Container>
         </>
