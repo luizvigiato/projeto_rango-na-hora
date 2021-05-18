@@ -99,7 +99,7 @@ export function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const auth = localStorage.getItem('token') == 'true' ? true : false;
+  const auth = localStorage.getItem('token') === 'true' ? true : false;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openP = Boolean(anchorEl);
 
