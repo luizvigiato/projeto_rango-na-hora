@@ -9,7 +9,7 @@ import ListaItens from "../text_teste/itensMenu";
 const HomePage = () => {
 
   const [itens, setItens] = useState(ListaItens);
-    
+
 
   return (
     // <DashboardLayout>
@@ -18,7 +18,6 @@ const HomePage = () => {
       <Container maxWidth="sm">
         <PersistentDrawerLeft />
         {/* Transformacao de um array recebido para o elemento ItensCardapio */}
-        {console.log(itens)}
         {itens.map((item, index) => (
           <ItensCardapio
             item={item}
