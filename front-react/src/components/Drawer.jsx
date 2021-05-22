@@ -18,7 +18,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import FastfoodIcon from '@material-ui/icons/Fastfood';
+// import FastfoodIcon from '@material-ui/icons/Fastfood';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import { Link } from "react-router-dom";
 import ListaMenu from './menu';
 
@@ -197,7 +198,7 @@ export function PersistentDrawerLeft() {
         {/* <Divider /> */}
         <List>
           {ListaMenu.map((item, index) => (
-            <ListItem  button component={Link} to={item.external ? null : {pathname: item.pathname}}>
+            <ListItem key={index} button component={Link} to={item.external ? null : {pathname: item.pathname}}>
               <ListItemIcon>
                 {/* Import e feito no arquivo com as labels components/menu */}
                 {item.icons}
@@ -208,10 +209,10 @@ export function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          {["Pedidos antigos"].map((text, index) => (
-            <ListItem button key={text}>
+          {["Cadastro"].map((text, index) => (
+            <ListItem button key={text} component={Link} to={text.external ? null : {pathname: "/cadastro"}}>
               <ListItemIcon>
-                {index % 2 === 0 ? <FastfoodIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <PersonAddIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
 

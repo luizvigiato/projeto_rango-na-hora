@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
@@ -7,17 +7,25 @@ import ItensCardapio from "./itenscardapio";
 import ListaItens from "../text_teste/itensMenu";
 
 const HomePage = () => {
+
+  const [itens, setItens] = useState(ListaItens);
+    
+
   return (
     // <DashboardLayout>
     <>
       <CssBaseline />
-        <Container maxWidth="sm">
-          <PersistentDrawerLeft />
-          {/* Transformacao de um array recebido para o elemento ItensCardapio */}
-          {ListaItens.map((item,index) =>(
-            <ItensCardapio imagem={item.imagem} descricao={item.descricao} valor={item.valor} label={item.label} />
-          ))}
-        </Container>
+      <Container maxWidth="sm">
+        <PersistentDrawerLeft />
+        {/* Transformacao de um array recebido para o elemento ItensCardapio */}
+        {console.log(itens)}
+        {itens.map((item, index) => (
+          <ItensCardapio
+            item={item}
+            onChange={setItens}
+            key={item.id} />
+        ))}
+      </Container>
     </>
   );
 };

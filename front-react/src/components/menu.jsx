@@ -8,8 +8,8 @@ const Menu = [
     icons: <Cardapio/>
   },
   {
-    label: "Pedidos",
-    pathname: "/pedidos",
+    label: "Carrinho",
+    pathname: "/carrinho",
     icons: <Carrinho/>
   },
 ];
