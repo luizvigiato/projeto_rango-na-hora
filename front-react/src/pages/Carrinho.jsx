@@ -43,15 +43,7 @@ function valorTotal() {
     return total;
 }
 
-function valorTaxa(total){
-    return total*0.1;
-}
 
-function contaTotal(){
-    var subTotal = valorTotal();
-    var taxa = valorTaxa(valorTotal());
-    return subTotal+taxa;
-}
 
 export default function Carrinho() {
 
@@ -90,18 +82,8 @@ export default function Carrinho() {
 
                             <TableRow>
                                 <TableCell rowSpan={3} />
-                                <TableCell colSpan={2}>Sub. Total</TableCell>
-                                <TableCell aling="right">{(valorTotal()).toFixed(2)}</TableCell>
-                            </TableRow>
-
-                            <TableRow>
-                                <TableCell>Taxa</TableCell>
-                                <TableCell aling="right">10%</TableCell>
-                                <TableCell aling="right">{valorTaxa(valorTotal()).toFixed(2)}</TableCell>
-                            </TableRow>
-                            <TableRow>
                                 <TableCell colSpan={2}>Total</TableCell>
-                                <TableCell aling="right">{contaTotal().toFixed(2)}</TableCell>
+                                <TableCell aling="right">{(valorTotal()).toFixed(2)}</TableCell>
                             </TableRow>
                         </TableBody>
                     </Table>
