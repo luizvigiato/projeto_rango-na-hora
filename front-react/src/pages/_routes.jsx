@@ -8,6 +8,7 @@ import Token from "./Token";
 import Logout from "./Logout";
 import CadastroFuncionario from "./CadastroFuncionario";
 import CadastroEmpresa from "./CadastroEmpresa";
+import Carrinho from "./Carrinho";
 
 
 // const Routes = () => {
@@ -35,6 +36,7 @@ const Routes = () => (
         <Route exact path='/cadastro' component={CadastroCliente}/>
         <Route exact path='/funcionarios' component={CadastroFuncionario} />
         <Route exact path="/cadEmpresa" component={CadastroEmpresa} />
+        <Route exact path='/carrinho' component={Carrinho} />
       </Switch>
     </ScrollToTop>
   </BrowserRouter>
