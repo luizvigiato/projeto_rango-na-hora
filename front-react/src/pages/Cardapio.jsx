@@ -3,7 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
 import { PersistentDrawerLeft } from "../components/Drawer";
-import ItensCardapio from "./itenscardapio";
+import ItensCardapio from "./ItensCardapio";
 import ListaItens from "../text_teste/itensMenu";
 
 const HomePage = () => {

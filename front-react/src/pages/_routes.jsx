@@ -2,7 +2,7 @@ import React from "react";
 import {  BrowserRouter, Switch, Route } from "react-router-dom";
 import ScrollToTop from './ScrollTop'
 
-import Menu from "./cardapio";
+import Menu from "./Cardapio";
 import CadastroCliente from './CadastroCliente';
 import Token from "./Token";
 import Logout from "./Logout";
