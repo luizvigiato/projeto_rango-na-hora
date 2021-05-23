@@ -114,7 +114,7 @@ export default function ItensCardapio(props) {
           <Grid className={classes.action} justify="flex-start" alignItems="center" wrap="nowrap" container>
             <Grid item xs={4} >
               <Typography>
-                <b>Valor R$ {props.item.valor}</b>
+                <b>Valor R$ {(props.item.valor).toFixed(2)}</b>
               </Typography>
             </Grid>
             <Grid item xs={5}>
