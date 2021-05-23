@@ -24,23 +24,45 @@ import Alert from '@material-ui/lab/Alert';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 460,
+    '& .MuiGrid-root':{
+      margin: 0,
+      padding: 0
+    },
+    '& .MuiTypography-root':{
+      margind: 0,
+      padding: 0,
+      // backgroundColor:"#F000FF",
+    },
+    '& .MuiContainer-root':{
+      // backgroundColor:"#F000FF",
+    }
   },
   action: {
     backgroung: "#F000FF",
     color: "#d50000",
     marginBottom: 1,
-    padding: 0
+    padding: 0,
+    margin: theme.spacing(0),
   },
   btn_quantidade: {
     padding: 0,
     margin: 0,
-    minWidth: 25
+    minWidth: 20,
+  },
+  btn_numero:{
+    padding: 0,
+    margin: 0,
+    minWidth: 30,
   },
   btn_add: {
     backgroundColor: '#4caf50',
     '&:hover':{
       backgroundColor: '#6fbf73'
     }
+  },
+  valor: {
+    margin: 0,
+    fontSize: '0.8rem'
   }
 }));
 
@@ -111,25 +133,25 @@ export default function ItensCardapio(props) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Grid className={classes.action} justify="flex-start" alignItems="center" wrap="nowrap" container>
-            <Grid item xs={4} >
-              <Typography>
+          <Grid container className={classes.action} justify="center" alignItems="center" wrap="nowrap"  spacing={0}>
+            <Grid container item md={4} sm={4} xs={4} xl={4} lg={4}>
+              <Typography className={classes.valor}>
                 <b>Valor R$ {(props.item.valor).toFixed(2)}</b>
               </Typography>
             </Grid>
-            <Grid item xs={5}>
-              <Container maxWidth="sm">
+            <Grid container align = "center" justify = "center" alignItems = "center" item md={5} sm={5} xs={5} lg={6}>
+              <Container maxWidth="md" direction="row">
                 <Button className={classes.btn_quantidade} variant="contained" size='small' onClick={adicionar}>
                   <AddIcon/>
                 </Button>
-                <Button disabled>{props.item.quant}</Button>
+                <Button className={classes.btn_numero} disabled>{props.item.quant}</Button>
                 <Button className={classes.btn_quantidade} variant="contained" size='small' disabled={props.item.quant < 1} onClick={remover}>
                   <RemoveIcon />
                 </Button>
               </Container>
             </Grid>
-            <Grid item xs>
-              <Button className={classes.btn_add} color="primary" placement="right" variant="contained" onClick={carrinho} disabled={props.item.quant<1}>
+            <Grid item md={4}>
+              <Button className={classes.btn_add} size="small" color="primary" placement="right" variant="contained" onClick={carrinho} disabled={props.item.quant<1}>
                 Adicionar
               </Button>
             </Grid>
