@@ -24,7 +24,6 @@ import Alert from '@material-ui/lab/Alert';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 460,
-
   },
   action: {
     backgroung: "#F000FF",
@@ -36,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     margin: 0,
     minWidth: 25
+  },
+  btn_add: {
+    backgroundColor: '#4caf50',
+    '&:hover':{
+      backgroundColor: '#6fbf73'
+    }
   }
 }));
 
@@ -124,7 +129,7 @@ export default function ItensCardapio(props) {
               </Container>
             </Grid>
             <Grid item xs>
-              <Button placement="right" variant="contained" onClick={carrinho} color="primary" disabled={props.item.quant<1}>
+              <Button className={classes.btn_add} color="primary" placement="right" variant="contained" onClick={carrinho} disabled={props.item.quant<1}>
                 Adicionar
               </Button>
             </Grid>
