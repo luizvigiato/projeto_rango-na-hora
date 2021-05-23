@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import { Typography } from "@material-ui/core";
 
 
 
@@ -35,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
     },
     formControl: {
         margin: theme.spacing(2),
+    },
+    texto:{
+        margin: theme.spacing(2),
+        fontSize: '2rem'
     }
 }));
 
@@ -114,6 +119,9 @@ export default function CadastroFuncionario() {
             <CssBaseline />
             <Container maxWidth="sm">
                 <PersistentDrawerLeft />
+                <Typography className={classes.texto} component="h1">
+                    <b>Cadastro Funcionarios</b>
+                </Typography>
                 <form className={classes.root} autoComplete="off">
                     <TextField fullWidth required id="nome" label="Nome Completo" variant="outlined" size="medium" />
                     <TextField fullWidth required id="email" label="Email" variant="outlined" size="medium" type='email' />

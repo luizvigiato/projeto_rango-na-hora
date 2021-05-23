@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
+import { Typography } from "@material-ui/core";
 
 
 
@@ -26,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(1),
         width: '25ch',
     },
+    texto:{
+        margin: theme.spacing(2),
+        fontSize: '2rem'
+    }
 }));
 
 function CelularMaskCustom(props) {
@@ -89,6 +94,9 @@ export default function CadastroEmpresa() {
             <CssBaseline />
             <Container maxWidth="sm">
                 <PersistentDrawerLeft />
+                <Typography className={classes.texto} component="h1">
+                    <b>Cadastro Empresa</b>
+                </Typography>
                 <form className={classes.root} autoComplete="off">
                     <TextField fullWidth required id="nome" label="Nome Completo" variant="outlined" size="medium" />
                     <TextField fullWidth required id="resp" label="Responsavel" variant="outlined" size="medium" />                    

@@ -122,6 +122,17 @@ export function PersistentDrawerLeft() {
     setAnchorEl(null);
   };
 
+  const logado = [
+    {
+      pathname: 'cadEmpresa',
+      nome: 'Cadastro Empresa'
+    },
+    {
+      pathname: 'funcionarios',
+      nome: 'Cad. Funcionarios'
+    },
+  ]
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -198,7 +209,7 @@ export function PersistentDrawerLeft() {
         {/* <Divider /> */}
         <List>
           {ListaMenu.map((item, index) => (
-            <ListItem key={index} button component={Link} to={item.external ? null : {pathname: item.pathname}}>
+            <ListItem key={index} button component={Link} to={item.external ? null : { pathname: item.pathname }}>
               <ListItemIcon>
                 {/* Import e feito no arquivo com as labels components/menu */}
                 {item.icons}
@@ -208,17 +219,32 @@ export function PersistentDrawerLeft() {
           ))}
         </List>
         <Divider />
-        <List>
-          {["Cadastro"].map((text, index) => (
-            <ListItem button key={text} component={Link} to={text.external ? null : {pathname: "/cadastro"}}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <PersonAddIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+        {!auth && (
+          <List>
+            {["Cadastro"].map((text, index) => (
+              <ListItem button key={text} component={Link} to={text.external ? null : { pathname: "/cadastro" }}>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <PersonAddIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
 
-            </ListItem>
-          ))}
-        </List>
+              </ListItem>
+            ))}
+          </List>
+        )}
+        {auth && (
+          <List>
+            {logado.map((text, index) => (
+              <ListItem key={index} button component={Link} to={text.external ? null : { pathname: text.pathname }}>
+                
+                  {/* Import e feito no arquivo com as labels components/menu */}
+                  
+                
+                <ListItemText primary={text.nome} />
+              </ListItem>
+            ))}
+          </List>
+        )}
       </Drawer>
       <main
         className={clsx(classes.content, {
