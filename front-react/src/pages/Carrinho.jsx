@@ -26,7 +26,11 @@ const useStyles = makeStyles((theme) => ({
         aling: 'center',
         alignItems: "center",
         fontSize: '2rem'
+    },
+    total:{
+        backgroundColor:'#eeeeee'
     }
+
 
 }));
 
@@ -80,7 +84,7 @@ export default function Carrinho() {
                                 </TableRow>
                             ))}
 
-                            <TableRow>
+                            <TableRow className={classes.total}>
                                 <TableCell rowSpan={3} />
                                 <TableCell colSpan={2}>Total</TableCell>
                                 <TableCell aling="right">{(valorTotal()).toFixed(2)}</TableCell>

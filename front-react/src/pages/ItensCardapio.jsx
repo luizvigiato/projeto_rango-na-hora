@@ -97,15 +97,20 @@ export default function ItensCardapio(props) {
   }
 
   const carrinho = () => {
-    // console.log();
     setOpen(true);
   }
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
+    // if (reason === 'clickaway') {
+    //   return;
+    // }
+    props.onChange((prevState) => {
+      const novoEstado = [...prevState]
+      const itemAlterado = novoEstado.find(item => props.item.id === item.id)
+      itemAlterado.quant = 0;
+      // console.log(novoEstado);
+      return novoEstado;
+    })
     setOpen(false);
   };
 

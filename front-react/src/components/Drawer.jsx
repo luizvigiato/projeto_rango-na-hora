@@ -131,6 +131,10 @@ export function PersistentDrawerLeft() {
       pathname: 'funcionarios',
       nome: 'Cad. Funcionarios'
     },
+    {
+      pathname: 'caixa',
+      nome: 'Caixa'
+    }
   ]
 
   return (
