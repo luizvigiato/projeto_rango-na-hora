@@ -134,6 +134,14 @@ export function PersistentDrawerLeft() {
     {
       pathname: 'caixa',
       nome: 'Caixa'
+    },
+    {
+      pathname: 'novocardapio',
+      nome: "Novo Cardapio"
+    },
+    {
+      pathname: 'adicionaritem',
+      nome: "Adicionar Item"
     }
   ]
 

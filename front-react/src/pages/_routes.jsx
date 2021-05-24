@@ -10,6 +10,8 @@ import CadastroFuncionario from "./CadastroFuncionario";
 import CadastroEmpresa from "./CadastroEmpresa";
 import Carrinho from "./Carrinho";
 import Caixa from "./Caixa";
+import NovoCardapio from "./NovoCardapio";
+import AdicionarItem from "./AdicionarItem";
 
 
 // const Routes = () => {
@@ -39,6 +41,8 @@ const Routes = () => (
         <Route exact path="/cadEmpresa" component={CadastroEmpresa} />
         <Route exact path='/carrinho' component={Carrinho} />
         <Route exact path='/caixa' component={Caixa} />
+        <Route exact path='/novocardapio' component={NovoCardapio}/>
+        <Route exact path='/adicionaritem' component={AdicionarItem} />
       </Switch>
     </ScrollToTop>
   </BrowserRouter>
