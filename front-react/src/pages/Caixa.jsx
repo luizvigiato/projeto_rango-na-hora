@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2rem'
     },
     input: {
-        marginTop: theme.spacing(5),
+        marginTop: theme.spacing(3),
         marginRight: theme.spacing(2)
     },
     total: {
@@ -136,8 +136,8 @@ export default function Caixa() {
                             </TableRow>
                         <TableRow>
                             <TableCell>Item</TableCell>
-                            <TableCell>Qnt.</TableCell>
-                            <TableCell>Valor Un.</TableCell>
+                            <TableCell align="right">Qnt.</TableCell>
+                            <TableCell align="right">Valor Un.</TableCell>
                             <TableCell align="right">Total p/ Item</TableCell>
                         </TableRow>
                         </TableHead>
@@ -145,8 +145,8 @@ export default function Caixa() {
                         {carrinho.map((item, key) => (
                             <TableRow key={item.id}>
                                 <TableCell>{item.label}</TableCell>
-                                <TableCell>{item.quant}</TableCell>
-                                <TableCell>{(item.valor).toFixed(2)}</TableCell>
+                                <TableCell align="right">{item.quant}</TableCell>
+                                <TableCell align="right">{(item.valor).toFixed(2)}</TableCell>
                                 <TableCell align="right">{(sumLinha(item.valor, item.quant)).toFixed(2)}</TableCell>
                             </TableRow>
                         ))}
